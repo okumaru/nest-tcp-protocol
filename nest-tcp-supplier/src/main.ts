@@ -7,7 +7,10 @@ async function bootstrap() {
 
   app.connectMicroservice<MicroserviceOptions>({
     transport: Transport.TCP,
-    options: { port: 9000 },
+    options: { 
+      host: 'nest-tcp-supplier',
+      port: 9000 
+    },
   });
 
   process.on('beforeExit', async () => app.close());

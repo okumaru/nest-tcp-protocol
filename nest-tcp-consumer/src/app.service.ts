@@ -9,7 +9,7 @@ export class AppService {
   async getHello(): Promise<string> {
     try {
       const sum = await lastValueFrom(
-        this.supplier.send({ cmd: 'sum' }, [1, 2, 3, 4]),
+        this.supplier.send({ cmd: 'sum' }, [1, 2, 3, 4, 5]),
       );
 
       console.log(sum);

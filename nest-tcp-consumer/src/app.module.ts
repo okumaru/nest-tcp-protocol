@@ -9,7 +9,10 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       {
         name: 'SUPPLIER_SERVICE',
         transport: Transport.TCP,
-        options: { port: 9000 },
+        options: { 
+          host: 'nest-tcp-supplier',
+          port: 9000 
+        },
       },
     ]),
   ],

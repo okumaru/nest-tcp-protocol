@@ -1,0 +1,16 @@
+services:
+  nest-tcp-supplier:
+    build: /nest-tcp-supplier
+    hostname: nest-tcp-supplier
+    ports:
+      - '3000:3000'
+      - '9000:9000'
+
+  nest-tcp-consumer:
+    build: /nest-tcp-consumer
+    hostname: nest-tcp-consumer
+    ports:
+      - '3001:3001'
+    depends_on:
+      - nest-tcp-supplier
+  
